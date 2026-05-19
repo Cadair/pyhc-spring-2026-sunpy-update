@@ -27,151 +27,90 @@ import os
 os.environ["PARFIVE_HIDE_PROGRESS"] = "True"
 ```
 
-# The SunPy Project Since November
+# The SunPy Project Since Last Year
 
 
 **Feature Releases:**
 
-* `sunpy` 6.1 (Feburary), 7.0rc2 out for testing, final expected this week.
-* `ndcube` 2.3 (January)
-* `sunkit-image` 0.6 (Feburary)
-* `sunkit-instruments` 0.6 (March)
-* `drms` 0.9 (Feburary)
-* `sunkit-magex` 1.1 (May)
+* `sunpy` 7.1 (December) and 8.0 coming soon
+* `ndcube` 2.4 (January)
+* `sunkit-image` 0.7 (March)
 
 **Maintenance Releases:**
 
-* `streamtracer` 2.4.0 and 2.4.1
-* `radiospectra` 0.6.1
-  
+* `streamtracer` 2.5.0
 
-# Highlights in `sunpy` 6.1 and 7.0
+# Highlights in `sunpy` 7.1 and coming in 8.0
 
-## Drawing extents of images on other images
-:::: {.columns}
+## Support for the Hard X-ray Imager (HXI) on the ASO-S mission (7.1)
 
-::: {.column width="50%"}
-![](https://docs.sunpy.org/en/stable/_images/sphx_glr_draw_wcs_extent_002.png)
-:::
+![](https://docs.sunpy.org/en/stable/_images/7.1-demo-asos_hxi.png)
 
-::: {.column width="50%"}
-![](https://docs.sunpy.org/en/stable/_images/sphx_glr_draw_wcs_extent_003.png)
-:::
+[HXIMap](https://docs.sunpy.org/en/stable/generated/api/sunpy.map.sources.HXIMap.html)
 
-::::
+*Contribution by Fu Yu*
 
-[https://docs.sunpy.org/en/stable/generated/gallery/plotting/draw_wcs_extent.html](https://docs.sunpy.org/en/stable/generated/gallery/plotting/draw_wcs_extent.html)
+## More Support for Solar Orbiter in 8.0
 
-*Contribution by Will Barnes*
+The 8.0 release has become a Solar Orbiter Focused release.
 
-## Helioprojective Radial Coordinates
+## Support for the Solar Orbiter Archive (SOAR) merged into `sunpy`
 
-:::: {.columns}
-
-::: {.column width="50%"}
-![](https://docs.sunpy.org/en/stable/_images/sphx_glr_reprojection_helioprojective_radial_001.png)
-:::
-
-::: {.column width="50%"}
-![](https://docs.sunpy.org/en/stable/_images/sphx_glr_reprojection_helioprojective_radial_002.png)
-:::
-
-::::
-
-[https://docs.sunpy.org/en/stable/generated/gallery/map_transformations/reprojection_helioprojective_radial.html](https://docs.sunpy.org/en/stable/generated/gallery/map_transformations/reprojection_helioprojective_radial.html)
-
-*Contribution by Albert Shih*
-
-## Support for S3 URIs with fsspec 
-
-:::: {.center}
 
 ```{python}
 #| echo: true
-import sunpy.map
+from sunpy.net import Fido, attrs as a
 
-s3_map = sunpy.map.Map("s3://data.sunpy.org/sunpy/AIA20110607_063302_0171_lowres.fits",
-                       fsspec_kwargs={"anon": True})
-s3_map.peek()
+Fido.search(
+    a.Time("2021-02-01", "2021-02-01 01:00"),
+    a.Level(1),
+    a.soar.Product("EUI-FSI174-IMAGE"),
+)["soar"]
 ```
-::::
 
-*Contribution by Wenli Mo*
+Thanks to all the contributors to the `sunpy-soar` package over the years.
 
-## Support for New Observatories
+## Support for New Instruments on Solar Orbiter
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-Polarimeter to Unify the Corona and Heliosphere (PUNCH) 
+Polarimetric and Helioseismic Imager (PHI)
 
-![](https://docs.sunpy.org/en/latest/_images/7.0-punch.png)
+![](https://docs.sunpy.org/en/latest/_images/sphx_glr_phi_example_003.png)
+
+*Contributions by Jonas Sinjan*
 :::
 
 ::: {.column width="50%"}
-Solar Ultraviolet Imaging Telescope (SUIT)
-![](./static/suit.png)
+Metis
+
+![](https://metisarchive.astro.unifi.it/archive/data/lastimages/solo_LL03_metis-vl-tb_latest.png)
+
+*Still WIP, Contributions by  Aleksandr Burtovoi*
 :::
 
 ::::
 
-Also added support for EIT Level 1 data and GONG magnetograms.
+## Tagging of Examples in our Gallery
 
-*Contributions by Chris Lowder, Rahul Gopalakrishnan, Nabil Freij, Shane Maloney*
+![](static/tags.png)
 
-## Plotting Maps with Autoalignment
+*Contributions by Stuart Mumford*
 
-`.plot(autoalign=True)` now picks the best autoalign method (with significantly better performance):
 
-:::: {.columns}
-
-::: {.column width="65%"}
-![](https://docs.sunpy.org/en/latest/_images/sphx_glr_autoalign_aia_hmi_001.png)
-:::
-
-::: {.column width="35%"}
-![](https://docs.sunpy.org/en/latest/_images/sphx_glr_autoalign_aia_hmi_003.png)
-:::
-
-::::
-
-*Contributions by Albert Shih, Pratham Hole*
-
-## Off-disk points can now be differentially rotated
-
-by using [`SphericalScreen`](https://docs.sunpy.org/en/latest/generated/api/sunpy.coordinates.SphericalScreen.html#sunpy.coordinates.SphericalScreen)
-
-::: {.small}
-![](https://docs.sunpy.org/en/latest/_images/sphx_glr_reprojected_map_002.png)
-:::
-
-*Contributions by Albert Shih*
-
-# ndcube 2.3
+# ndcube 2.4
 
 Highlights:
 
-* Add's a `NDMeta` class with functionality for assigning metadata to an array axis (and modifying it accordingly).
-* Adds `NDCube.squeeze()`  to remove length 1 axes.
-* Significant speed up in `NDCube.axis_world_coords`.
-* Add's a shortcut to `NDCube.rebin()` to not rebin along an axis by setting its binsize to -1.
+* Add support for serializing all ndcube objects to the ASDF file format.
+* Allow addition and subtraction between `NDCube` and `NDData`.
+* Add method `to_ndddata` for copying to `NDData` classes.
 
-Changelog: [https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html#id2](https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html#id2)
+Changelog: [https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html](https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html#v2-4-0-2026-01-14)
 
-# sunkit-magex 1.1
+# sunkit-image 0.7
 
-Highlights:
+Added a new, simplified and extensible coalignment API.
 
-* Various cleanups, with some breaking changes from the pfsspy API.
-* Made the `streamtracer` dependancy required for fast tracing.
-
-# sunkit-instruments 0.6
-
-Highlights:
-
-* `SourceSpectra` and `AbstractChannel` classes as building blocks for temperature response functionality.
-* Added support for SUVI flight models.
-
-# Other Updates
-
-* Coordination Meeting 18th-20th June in London (hybrid) - [https://sunpy.org/about/meetings](https://sunpy.org/about/meetings)
+![](https://docs.sunpy.org/projects/sunkit-image/en/stable/_images/sphx_glr_aligning_aia_with_eis_maps_001.png)

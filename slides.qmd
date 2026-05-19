@@ -44,7 +44,11 @@ os.environ["PARFIVE_HIDE_PROGRESS"] = "True"
 
 ## Support for the Hard X-ray Imager (HXI) on the ASO-S mission (7.1)
 
+:::: {.columns}
+::: {.column width="100%"}
 ![](https://docs.sunpy.org/en/stable/_images/7.1-demo-asos_hxi.png)
+:::
+::::
 
 [HXIMap](https://docs.sunpy.org/en/stable/generated/api/sunpy.map.sources.HXIMap.html)
 
@@ -94,12 +98,17 @@ Metis
 
 ## Tagging of Examples in our Gallery
 
+:::: {.columns}
+::: {.column width="100%"}
 ![](static/tags.png)
+:::
+::::
 
 *Contributions by Stuart Mumford*
 
+# Other Package Updates
 
-# ndcube 2.4
+## ndcube 2.4
 
 Highlights:
 
@@ -109,7 +118,7 @@ Highlights:
 
 Changelog: [https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html](https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html#v2-4-0-2026-01-14)
 
-# sunkit-image 0.7
+## sunkit-image 0.7
 
 Added a new, simplified and extensible coalignment API.
 

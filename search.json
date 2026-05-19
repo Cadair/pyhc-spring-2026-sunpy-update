@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "slides.html#support-for-the-hard-x-ray-imager-hxi-on-the-aso-s-mission-7.1",
+    "href": "slides.html#support-for-the-hard-x-ray-imager-hxi-on-the-aso-s-mission-7.1",
+    "title": "A SunPy Project Update",
+    "section": "Support for the Hard X-ray Imager (HXI) on the ASO-S mission (7.1)",
+    "text": "Support for the Hard X-ray Imager (HXI) on the ASO-S mission (7.1)\n\nHXIMap\nContribution by Fu Yu"
+  },
+  {
+    "objectID": "slides.html#more-support-for-solar-orbiter-in-8.0",
+    "href": "slides.html#more-support-for-solar-orbiter-in-8.0",
+    "title": "A SunPy Project Update",
+    "section": "More Support for Solar Orbiter in 8.0",
+    "text": "More Support for Solar Orbiter in 8.0\nThe 8.0 release has become a Solar Orbiter Focused release."
+  },
+  {
+    "objectID": "slides.html#support-for-the-solar-orbiter-archive-soar-merged-into-sunpy",
+    "href": "slides.html#support-for-the-solar-orbiter-archive-soar-merged-into-sunpy",
+    "title": "A SunPy Project Update",
+    "section": "Support for the Solar Orbiter Archive (SOAR) merged into sunpy",
+    "text": "Support for the Solar Orbiter Archive (SOAR) merged into sunpy\n\nfrom sunpy.net import Fido, attrs as a\n\nFido.search(\n    a.Time(\"2021-02-01\", \"2021-02-01 01:00\"),\n    a.Level(1),\n    a.soar.Product(\"EUI-FSI174-IMAGE\"),\n)[\"soar\"]\n\nQueryResponseTable length=1\n\nInstrumentData productLevelStart timeEnd timeData item IDFilenameFilesizeSOOP NameDetectorWavelength\nMbyte\nstr3str16str2str23str23str43str52float64str4str3float64\nEUIeui-fsi174-imageL12021-02-01 00:45:12.2282021-02-01 00:45:22.228solo_L1_eui-fsi174-image_20210201T004512228solo_L1_eui-fsi174-image_20210201T004512228_V06.fits3.393noneFSI174.0\n\n\n\nThanks to all the contributors to the sunpy-soar package over the years."
+  },
+  {
+    "objectID": "slides.html#support-for-new-instruments-on-solar-orbiter",
+    "href": "slides.html#support-for-new-instruments-on-solar-orbiter",
+    "title": "A SunPy Project Update",
+    "section": "Support for New Instruments on Solar Orbiter",
+    "text": "Support for New Instruments on Solar Orbiter\n\n\nPolarimetric and Helioseismic Imager (PHI)\n\nContributions by Jonas Sinjan\n\nMetis\n\nStill WIP, Contributions by Aleksandr Burtovoi"
+  },
+  {
+    "objectID": "slides.html#tagging-of-examples-in-our-gallery",
+    "href": "slides.html#tagging-of-examples-in-our-gallery",
+    "title": "A SunPy Project Update",
+    "section": "Tagging of Examples in our Gallery",
+    "text": "Tagging of Examples in our Gallery\n\nContributions by Stuart Mumford"
+  }
+]

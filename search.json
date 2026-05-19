@@ -4,7 +4,7 @@
     "href": "slides.html#support-for-the-hard-x-ray-imager-hxi-on-the-aso-s-mission-7.1",
     "title": "A SunPy Project Update",
     "section": "Support for the Hard X-ray Imager (HXI) on the ASO-S mission (7.1)",
-    "text": "Support for the Hard X-ray Imager (HXI) on the ASO-S mission (7.1)\n\nHXIMap\nContribution by Fu Yu"
+    "text": "Support for the Hard X-ray Imager (HXI) on the ASO-S mission (7.1)\n\n\n\n\nHXIMap\nContribution by Fu Yu"
   },
   {
     "objectID": "slides.html#more-support-for-solar-orbiter-in-8.0",
@@ -32,6 +32,20 @@
     "href": "slides.html#tagging-of-examples-in-our-gallery",
     "title": "A SunPy Project Update",
     "section": "Tagging of Examples in our Gallery",
-    "text": "Tagging of Examples in our Gallery\n\nContributions by Stuart Mumford"
+    "text": "Tagging of Examples in our Gallery\n\n\n\n\nContributions by Stuart Mumford"
+  },
+  {
+    "objectID": "slides.html#ndcube-2.4",
+    "href": "slides.html#ndcube-2.4",
+    "title": "A SunPy Project Update",
+    "section": "ndcube 2.4",
+    "text": "ndcube 2.4\nHighlights:\n\nAdd support for serializing all ndcube objects to the ASDF file format.\nAllow addition and subtraction between NDCube and NDData.\nAdd method to_ndddata for copying to NDData classes.\n\nChangelog: https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html"
+  },
+  {
+    "objectID": "slides.html#sunkit-image-0.7",
+    "href": "slides.html#sunkit-image-0.7",
+    "title": "A SunPy Project Update",
+    "section": "sunkit-image 0.7",
+    "text": "sunkit-image 0.7\nAdded a new, simplified and extensible coalignment API."
   }
 ]
